@@ -1,0 +1,4 @@
+uebung12.Mensch
+Max
+setName
+Johannes
