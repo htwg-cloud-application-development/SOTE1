@@ -21,7 +21,7 @@ public class RPC {
 				System.out.println(line);
 			}
 			
-			Class newClass = Class.forName(lines.get(0));
+			Class<?> newClass = Class.forName(lines.get(0));
 			Constructor constr = newClass.getConstructor(String.class);
 			Object obj = constr.newInstance(lines.get(1));
 			Method method = newClass.getMethod(lines.get(2), String.class);
