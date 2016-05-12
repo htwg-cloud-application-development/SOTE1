@@ -2,7 +2,7 @@ package uebung16;
 
 public class Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
 		Gabel gabel0 = new Gabel(0);
@@ -23,6 +23,13 @@ public class Application {
 		phil3.start();
 		phil4.start();
 		
+		phil0.join();
+		phil1.join();
+		phil2.join();
+		phil3.join();
+		phil4.join();
+		
+		System.out.println("Ende");
 		
 	}
 

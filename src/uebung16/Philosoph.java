@@ -21,13 +21,24 @@ public class Philosoph extends Thread {
 			
 			try {
 			
+				//Warten
 				Philosoph.sleep((long) (Math.random() * 100));
 				
+				//Schaut ob linke Gabel frei ist
 				while (!linkeGabel.liegtAufTisch){
-					Philosoph.sleep(100);
+					System.out.println("idle ");
 				}
 				
-				rechteGabel.greifeGabel(this);
+				
+				// nimm linke und rechte gabel
+				if(linkeGabel.greifeGabel(this) && rechteGabel.greifeGabel(this)){
+					Thread.sleep((long) (Math.random() * 100));
+					System.out.println("Essen" +  this.toString() + " " + i);
+					rechteGabel.legeGabelHin(this);
+					
+				}
+				
+				linkeGabel.legeGabelHin(this);
 				
 				
 				
@@ -39,6 +50,12 @@ public class Philosoph extends Thread {
 			
 			
 		}
+	}
+	
+	@Override
+	public String toString(){
+		
+		return "Philosoph_" + this.nummer;
 		
 	}
 }
