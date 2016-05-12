@@ -29,7 +29,8 @@ public class RPC {
 			
 			method = newClass.getMethod("getName");
 			System.out.println(method.invoke(obj));
-			
+			String test = (String) method.invoke(obj);
+			System.out.println(test);
 			
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();

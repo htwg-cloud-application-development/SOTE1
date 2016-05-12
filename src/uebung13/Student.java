@@ -2,11 +2,16 @@ package uebung13;
 
 public class Student {
 
-	@SqlAttribute(sqlType=SQLType.VARCHAR, persist=true)
+	@SqlType(sqlType=SqlAttribute.VARCHAR, persist=true)
 	private String name;
 	
-	@SqlAttribute(sqlType=SQLType.INTERGER, persist=true)
+	@SqlType(sqlType=SqlAttribute.INTERGER, persist=true)
 	private int matrikelNr;
+	
+	public Student(String name, int matrikelNr){
+		this.name = name;
+		this.matrikelNr = matrikelNr;
+	}
 	
 	public String getName() {
 		return name;
