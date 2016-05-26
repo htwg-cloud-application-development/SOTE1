@@ -21,14 +21,13 @@ public class Philosoph extends Thread {
 			
 			try {
 			
-				//Warten
+				
 				Philosoph.sleep((long) (Math.random() * 100));
 				
 				//Schaut ob linke Gabel frei ist
 				while (!linkeGabel.liegtAufTisch){
 					System.out.println("idle ");
 				}
-				
 				
 				// nimm linke und rechte gabel
 				if(linkeGabel.greifeGabel(this) && rechteGabel.greifeGabel(this)){
@@ -39,9 +38,7 @@ public class Philosoph extends Thread {
 				}
 				
 				linkeGabel.legeGabelHin(this);
-				
-				
-				
+	
 				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
